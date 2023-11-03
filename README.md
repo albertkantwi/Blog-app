@@ -133,7 +133,7 @@ To run tests, run the following command:
 ## 👥 Authors <a name="authors"></a>
 
 👤 **Author1**
- *[Zuwaira Sadiq]*
+ *[Albert Antwi]*
 
 - GitHub: [@albertkantwi](https://github.com/albertkantwi)
 - LinkedIn: [Albert Antwi](https://www.linkedin.com/in/albertkantwi/)

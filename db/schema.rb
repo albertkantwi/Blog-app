@@ -34,11 +34,11 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_03_071400) do
   end
 
   create_table "posts", force: :cascade do |t|
+    t.bigint "author_id"
     t.string "title"
     t.text "text"
     t.integer "comments_counter"
     t.integer "likes_counter"
-    t.bigint "author_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["author_id"], name: "index_posts_on_author_id"
@@ -48,7 +48,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_03_071400) do
     t.string "name"
     t.text "photo"
     t.text "bio"
-    t.integer "post_counter"
+    t.integer "posts_counter"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

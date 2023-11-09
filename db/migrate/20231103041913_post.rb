@@ -6,6 +6,7 @@ class Post < ActiveRecord::Migration[7.1]
       t.integer :comments_counter
       t.integer :likes_counter
       t.references :author, null: false, foreign_key: {to_table: :users}
+      
       t.timestamps
     end
   end

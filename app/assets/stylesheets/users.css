@@ -1,0 +1,24 @@
+* {
+    text-decoration: none;
+  }
+  
+  .user-list {
+    padding: 0;
+  }
+  
+  .user.card {
+    display: flex;
+  }
+  
+  .user-card,
+  .user-bio {
+      padding: 15px;
+      margin-bottom: 10px;
+      border: 1px solid #ebebeb;
+  }
+  
+  .user-photo {
+    width: 100px;
+    height: auto;
+    margin-right: 10px;
+  }

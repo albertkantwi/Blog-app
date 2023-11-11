@@ -1,7 +1,7 @@
 <h1>All posts</h1>
 
-<div>
-  <%= image_tag(@user.photo, alt: @user.name) %>
+<div class="user-card">
+  <%= image_tag(@user.photo, alt: @user.name, class: "user-photo") %>
   <div>
     <h2><%= @user.name %></h2>
     <p>Number of posts: <%= @user.posts.count %></p>
@@ -9,13 +9,13 @@
 </div>
 
 <% @posts.each do |post| %>
-  <div>.
+  <div class="post">.
     <div>
       <h2><%= link_to "#{post.title}", user_post_path(post.author, post) %></h2>
       <p><%= post.text %></p>
       <p>Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %></p>
     </div>
-    <div>
+    <div class="post-comments">
       <% post.recent_comments.each do |comment| %>
         <p>
           <strong><%= comment.user.name %> :</strong> <%= comment.text %>

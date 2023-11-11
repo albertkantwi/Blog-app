@@ -1,23 +1,57 @@
 .user-card {
-  display: flex;
-  align-items: center;
-  margin-bottom: 20px;
-}
-
-.user-photo {
-  width: 50px;
-  height: 50px;
-  margin-right: 10px;
-}
-
-.post {
-  border: 1px solid #ccc;
-  padding: 10px;
-  margin-bottom: 20px;
-}
-
-.post-comments {
-  margin-top: 15px;
-  border: 1px solid #ccc;
-  padding: 10px;
-}
+    display: flex;
+    align-items: center;
+  }
+  
+  .user-photo {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+  }
+  
+  .post {
+      margin-bottom: 16px;
+    border: 1px solid #d8d7d7;
+    padding: 10px;
+  }
+  
+  .post-comments {
+    margin-top: 16px;
+    padding: 10px;
+    border: 1px solid #d6d5d5;
+  }
+  
+  label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  input[type="text"],
+  textarea {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+  }
+  
+  .back,
+  button,
+  input[type="submit"] {
+    background-color: #6e839b;
+    color: #fff;
+    padding: 10px 15px;
+    border: 1px solid #8207f5;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #a5d497;
+    border: 1px solid rgb(194, 78, 165);
+  }
+  
+  a {
+    color: #337ab7;
+  }
+  

@@ -1,2 +1,16 @@
 <h1>Specific post</h1>
-<p>Show specific post by specific user</p>
+
+<div class="post">
+  <div class="post-header">
+    <h3>Post #<%= @post.id %> by <%= @post.author.name %></h3>
+  </div>
+  <div>
+    <p><%= @post.text %></p>
+    <p>Comments: <%= @post.comments_counter %>, Likes: <%= @post.likes_counter %></p>
+  </div>
+  <div class="post-comments">
+    <% @post.comments.each do |comment| %>
+      <p><strong><%= comment.user.name %>:</strong> <%= comment.text %></p>
+    <% end %>
+  </div>
+</div>

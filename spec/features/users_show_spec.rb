@@ -49,7 +49,7 @@ RSpec.describe 'When I open user show page', type: :system do
 
   it 'shows the view all post button' do
     visit user_path(@first_user)
-    expect(page).to have_link('See All Posts')
+    expect(page).to have_link('See all posts')
   end
 
   context 'When I click a user\'s post' do
@@ -62,8 +62,8 @@ RSpec.describe 'When I open user show page', type: :system do
 
   context 'When I click to see all posts' do
     it 'redirects me to the user\'s post\'s index page' do
-      visit user_post_path(@first_user)
-      click_link('See All Posts')
+      visit user_path(@first_user)
+      click_link('See all posts')
       expect(page).to have_current_path("/users/#{@first_user.id}/posts")
     end
   end

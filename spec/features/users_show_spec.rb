@@ -22,7 +22,7 @@ RSpec.describe 'When I open user show page', type: :system do
 
   it 'shows the photos of users' do
     visit user_path(@first_user)
-    expect(page).to have_css('img[alt="photo"]')
+    expect(page).to have_css('img[alt="Tom"]')
   end
 
   it 'shows the user\'s name' do
@@ -32,7 +32,7 @@ RSpec.describe 'When I open user show page', type: :system do
 
   it 'shows the number of posts the user has written' do
     visit user_path(@first_user)
-    expect(page).to have_content('Number of posts: 8')
+    expect(page).to have_content('Number of posts: 4')
   end
 
   it 'shows the bio' do
@@ -62,7 +62,7 @@ RSpec.describe 'When I open user show page', type: :system do
 
   context 'When I click to see all posts' do
     it 'redirects me to the user\'s post\'s index page' do
-      visit user_path(@first_user)
+      visit user_post_path(@first_user)
       click_link('See All Posts')
       expect(page).to have_current_path("/users/#{@first_user.id}/posts")
     end

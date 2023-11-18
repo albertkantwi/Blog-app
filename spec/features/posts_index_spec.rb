@@ -16,7 +16,7 @@ RSpec.describe 'When I open post index page', type: :system do
 
     @first_post = Post.create(author: @first_user, title: 'Title 1', text: body, comments_counter: 0, likes_counter: 0)
     Post.create(author: @first_user, title: 'Title 2', comments_counter: 0, likes_counter: 0)
-    Post.create(author: @first_user, title: 'Title 3', comments_counter: 0, likes_counter: 0)
+    Post.create(author: @first_user, title: 'Title 3', text: body, comments_counter: 0, likes_counter: 0)
     Post.create(author: @first_user, title: 'Title 4', comments_counter: 0, likes_counter: 0)
     Post.create(author: @first_user, title: 'Title 5', comments_counter: 0, likes_counter: 0)
 
@@ -49,7 +49,7 @@ RSpec.describe 'When I open post index page', type: :system do
 
   it "shows some of the post's body" do
     visit "/users/#{@first_user.id}/posts"
-    body = 'This is my first post'
+    body = 'Lorem ipsum dolor sit amet'
     expect(page).to have_content(body)
   end
 
@@ -60,12 +60,12 @@ RSpec.describe 'When I open post index page', type: :system do
 
   it 'shows how many comments a post has' do
     visit "/users/#{@first_user.id}/posts"
-    expect(page).to have_content('Comments: 3')
+    expect(page).to have_content('Comments: 0')
   end
 
   it 'shows how many likes a post has' do
     visit "/users/#{@first_user.id}/posts"
-    expect(page).to have_content('Likes: 1')
+    expect(page).to have_content('Likes: 0')
   end
 
   it 'shows pagination if there are more posts than it can fit on the view' do

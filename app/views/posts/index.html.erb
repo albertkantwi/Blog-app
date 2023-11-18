@@ -1,12 +1,12 @@
 <%= link_to 'Back', users_path %>
-<h1>All posts</h1>
+<h1>All posts by User</h1>
 
 <button>
   <%= link_to "New post", new_user_post_path(@user), class: "back" %>
 </button>
 
 <div class="user-card">
-  <%= image_tag(@user.photo, alt: @user.name, class: "user-photo") %>
+  <%= image_tag(@user.photo, alt: @user.name, class: "user-photo") if @user.photo.present? %>
   <div class="user-details">
     <h2><%= @user.name %></h2>
     <p>Number of posts: <%= @user.posts.count %></p>
@@ -23,7 +23,7 @@
 
     <div class="post-comments">
       <%= link_to "Add comment", new_user_post_comment_path(post.author, post) %>
-      <% post.recent_comments.each do |comment| %>
+      <% post.recent_comments.includes(:user).each do |comment| %>
         <p>
           <strong><%= comment.user.name %> :</strong> <%= comment.text %>
         </p>

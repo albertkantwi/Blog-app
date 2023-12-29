@@ -4,7 +4,7 @@ class PostsController < ApplicationController
 
   def index
     @user = User.find(params[:user_id])
-    @posts = Post.where(author_id: params[:user_id])
+    @posts = @user.posts.includes(:comments).paginate(page: params[:page], per_page: 6)
   end
 
   def show
@@ -12,12 +12,12 @@ class PostsController < ApplicationController
   end
 
   def new
-    @user = User.find(params[:user_id])
+    @user = current_user
     @post = @user.posts.build
   end
 
   def create
-    @user = User.find(params[:user_id])
+    @user = current_user
     @post = @user.posts.build(post_params)
 
     if @post.save
@@ -30,7 +30,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :text)
+    params.require(:post).permit(:title, :text, :comments_counter, :likes_counter)
   end
 
   def find_post
